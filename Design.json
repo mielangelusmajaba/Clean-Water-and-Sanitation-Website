@@ -1,0 +1,280 @@
+{
+  "design_system": {
+    "brand_identity": {
+      "name": "Aquaculture/Marine Company Website",
+      "style": "Modern, clean, nature-focused with professional corporate elements",
+      "tone": "Professional, sustainable, trustworthy, environmentally conscious"
+    },
+    "color_palette": {
+      "primary": {
+        "teal": "#00BFA5",
+        "description": "Main CTA buttons, accents, interactive elements"
+      },
+      "secondary": {
+        "navy_blue": "#1A2332",
+        "dark_slate": "#2C3E50",
+        "description": "Footer, headers, text overlays on images"
+      },
+      "neutral": {
+        "white": "#FFFFFF",
+        "light_gray": "#F5F5F5",
+        "medium_gray": "#666666",
+        "description": "Backgrounds, body text, card backgrounds"
+      },
+      "accent": {
+        "bright_blue": "#00A3E0",
+        "description": "Secondary actions, links"
+      }
+    },
+    "typography": {
+      "heading_font": {
+        "family": "Sans-serif (likely Montserrat, Poppins, or similar)",
+        "weights": ["600", "700"],
+        "characteristics": "Clean, modern, geometric"
+      },
+      "body_font": {
+        "family": "Sans-serif (likely Open Sans, Roboto, or similar)",
+        "weights": ["400", "500"],
+        "characteristics": "Highly readable, neutral"
+      },
+      "hierarchy": {
+        "h1": {
+          "size": "48-64px",
+          "weight": "700",
+          "color": "White (on image overlays) or Navy (on light backgrounds)",
+          "letter_spacing": "Normal to slightly tight"
+        },
+        "h2": {
+          "size": "36-48px",
+          "weight": "600-700",
+          "color": "Navy or White depending on background"
+        },
+        "h3": {
+          "size": "24-32px",
+          "weight": "600",
+          "color": "Navy or teal for emphasis"
+        },
+        "body": {
+          "size": "16-18px",
+          "weight": "400",
+          "line_height": "1.6-1.8",
+          "color": "Medium gray or white on dark backgrounds"
+        },
+        "small_text": {
+          "size": "14px",
+          "weight": "400",
+          "color": "Medium gray"
+        }
+      }
+    },
+    "layout_structure": {
+      "grid_system": {
+        "type": "12-column responsive grid",
+        "breakpoints": {
+          "mobile": "320-768px",
+          "tablet": "768-1024px",
+          "desktop": "1024-1920px"
+        },
+        "max_width": "1440px",
+        "gutter": "24-32px"
+      },
+      "spacing_scale": {
+        "xs": "8px",
+        "sm": "16px",
+        "md": "24px",
+        "lg": "48px",
+        "xl": "64px",
+        "xxl": "96px",
+        "section_padding": "80-120px vertical"
+      }
+    },
+    "components": {
+      "hero_section": {
+        "structure": "Full-width background image with overlay gradient",
+        "overlay": "Dark gradient overlay (rgba(0,0,0,0.3) to rgba(0,0,0,0.5))",
+        "content_alignment": "Left-aligned or centered",
+        "height": "60vh to 100vh",
+        "elements": [
+          "Large headline (H1)",
+          "Subheadline or body text",
+          "Primary CTA button",
+          "Optional secondary navigation or stats"
+        ]
+      },
+      "buttons": {
+        "primary": {
+          "background": "Teal (#00BFA5)",
+          "color": "White",
+          "padding": "14px 32px",
+          "border_radius": "4px",
+          "font_weight": "600",
+          "hover_state": "Slightly darker teal or subtle scale transform",
+          "text_transform": "Uppercase or sentence case"
+        },
+        "secondary": {
+          "background": "Transparent",
+          "border": "2px solid teal or white",
+          "color": "Teal or white",
+          "padding": "14px 32px",
+          "border_radius": "4px"
+        }
+      },
+      "cards": {
+        "structure": "Rectangular containers with optional image",
+        "background": "White or light gray",
+        "shadow": "Subtle: 0 2px 8px rgba(0,0,0,0.1)",
+        "border_radius": "8px",
+        "padding": "24-32px",
+        "hover_effect": "Subtle lift (translateY(-4px)) and shadow increase",
+        "image_treatment": "Top of card, full-width, or left/right aligned"
+      },
+      "image_sections": {
+        "full_bleed": {
+          "width": "100vw",
+          "aspect_ratio": "16:9 or 21:9 for ultra-wide",
+          "overlay": "Optional dark gradient for text readability"
+        },
+        "split_layout": {
+          "structure": "50/50 or 60/40 split between image and content",
+          "responsive": "Stack vertically on mobile",
+          "padding": "48-64px between elements"
+        },
+        "grid_gallery": {
+          "columns": "2-4 columns depending on screen size",
+          "gap": "16-24px",
+          "aspect_ratio": "Square or 4:3"
+        }
+      },
+      "content_sections": {
+        "pattern": "Alternating image-left/content-right and vice versa",
+        "background_alternation": "White and light gray backgrounds",
+        "max_content_width": "600-800px for readability",
+        "vertical_spacing": "80-120px between sections"
+      },
+      "navigation": {
+        "header": {
+          "position": "Fixed or sticky at top",
+          "background": "Transparent with blur/overlay or solid white",
+          "height": "70-90px",
+          "logo_position": "Left",
+          "menu_position": "Right",
+          "menu_style": "Horizontal inline links",
+          "mobile": "Hamburger menu"
+        },
+        "footer": {
+          "background": "Dark navy (#1A2332)",
+          "color": "White and light gray",
+          "structure": "Multi-column layout (3-5 columns)",
+          "sections": [
+            "Company info and logo",
+            "Quick links",
+            "Contact information",
+            "Social media icons",
+            "Legal/copyright"
+          ],
+          "padding": "48-64px vertical"
+        }
+      },
+      "text_overlays": {
+        "background": "Semi-transparent dark box (rgba(0,0,0,0.6-0.8))",
+        "padding": "32-48px",
+        "border_radius": "8px",
+        "placement": "Over image backgrounds",
+        "max_width": "500-700px"
+      },
+      "icon_treatment": {
+        "style": "Line icons or simple filled icons",
+        "size": "24-48px",
+        "color": "Teal or navy",
+        "spacing": "16px from adjacent text"
+      },
+      "news_update_cards": {
+        "structure": "Image thumbnail + text content",
+        "layout": "Horizontal or vertical card",
+        "elements": [
+          "Featured image",
+          "Date or category tag",
+          "Headline",
+          "Excerpt (2-3 lines)",
+          "Read more link/button"
+        ],
+        "aspect_ratio": "16:9 or 4:3 for images"
+      }
+    },
+    "visual_principles": {
+      "imagery": {
+        "style": "High-quality photography, nature-focused",
+        "subjects": "Water, aquaculture facilities, people working, aerial views, natural environments",
+        "treatment": "Bright, natural lighting with high contrast",
+        "aspect_ratios": ["16:9", "21:9", "4:3", "1:1"],
+        "overlay_usage": "Dark overlays (30-50% opacity) when text is placed on images"
+      },
+      "whitespace": {
+        "philosophy": "Generous whitespace for breathing room",
+        "content_padding": "48-96px on sides for desktop",
+        "element_spacing": "Consistent vertical rhythm using spacing scale"
+      },
+      "consistency": {
+        "section_structure": "Repeating pattern of full-width image sections alternating with content sections",
+        "alignment": "Consistent left-alignment for text, centered for headlines",
+        "cta_placement": "Below content blocks, consistent positioning"
+      }
+    },
+    "responsive_behavior": {
+      "mobile": {
+        "navigation": "Hamburger menu",
+        "typography": "Scale down by 25-40%",
+        "layout": "Single column, stack all elements",
+        "images": "Full-width, adjusted aspect ratios",
+        "padding": "Reduce to 16-24px on sides"
+      },
+      "tablet": {
+        "layout": "2-column grid where appropriate",
+        "typography": "Scale down by 15-25%",
+        "images": "Flexible widths, maintain aspect ratios"
+      },
+      "desktop": {
+        "layout": "Full multi-column layouts",
+        "max_width": "1440px centered",
+        "side_padding": "48-96px"
+      }
+    },
+    "interactions": {
+      "hover_states": {
+        "buttons": "Color darken + subtle scale (1.02-1.05)",
+        "cards": "Lift effect (translateY(-4px)) + shadow increase",
+        "links": "Color change to teal or underline",
+        "images": "Subtle zoom (scale 1.05) with overflow hidden"
+      },
+      "transitions": {
+        "duration": "0.3s",
+        "easing": "ease-in-out or cubic-bezier",
+        "properties": "transform, box-shadow, background-color, color"
+      },
+      "scroll_effects": {
+        "header": "Shadow appears on scroll",
+        "sections": "Optional fade-in or slide-in on scroll into view"
+      }
+    },
+    "accessibility": {
+      "contrast_ratios": "WCAG AA minimum (4.5:1 for body text, 3:1 for large text)",
+      "focus_states": "Visible outline or border on keyboard focus",
+      "alt_text": "Required for all images",
+      "semantic_html": "Proper heading hierarchy, semantic tags"
+    },
+    "usage_guidelines": {
+      "section_composition": [
+        "Hero section with full-width image and overlay text",
+        "News/updates section with cards on light background",
+        "Full-width image section with text overlay or split layout",
+        "Content section with alternating image-text layout",
+        "Stats or highlights section on colored background",
+        "Call-to-action section with button",
+        "Footer with multi-column links and information"
+      ],
+      "content_blocks": "Each major section should have clear visual separation through background color changes or whitespace",
+      "image_quality": "Use high-resolution images (1920px+ width for full-width sections)",
+      "performance": "Optimize images, lazy load below-fold content"
+    }
+  }
+}
