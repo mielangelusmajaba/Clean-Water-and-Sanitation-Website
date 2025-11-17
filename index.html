@@ -174,55 +174,5 @@
             </div>
         </div>
     </footer>
-
-    <script>
-        // Mobile navigation toggle with accessibility
-        document.addEventListener('DOMContentLoaded', function() {
-            const navToggle = document.querySelector('.nav-toggle');
-            const navMenu = document.querySelector('.nav-menu');
-
-            navToggle.addEventListener('click', function() {
-                const isExpanded = navMenu.classList.toggle('active');
-                navToggle.setAttribute('aria-expanded', isExpanded);
-            });
-
-            // Close menu when clicking on a link
-            const navLinks = document.querySelectorAll('.nav-menu a');
-            navLinks.forEach(link => {
-                link.addEventListener('click', function() {
-                    navMenu.classList.remove('active');
-                    navToggle.setAttribute('aria-expanded', 'false');
-                });
-            });
-
-            // Close menu on escape key
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'Escape' && navMenu.classList.contains('active')) {
-                    navMenu.classList.remove('active');
-                    navToggle.setAttribute('aria-expanded', 'false');
-                    navToggle.focus();
-                }
-            });
-
-            // Handle smooth scrolling with offset for fixed header
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    const targetId = this.getAttribute('href');
-                    if (targetId !== '#' && targetId !== '#learn-more') {
-                        e.preventDefault();
-                        const target = document.querySelector(targetId);
-                        if (target) {
-                            const headerHeight = document.querySelector('.header').offsetHeight;
-                            const targetPosition = target.offsetTop - headerHeight;
-                            window.scrollTo({
-                                top: targetPosition,
-                                behavior: 'smooth'
-                            });
-                        }
-                    }
-                });
-            });
-        });
-    </script>
 </body>
 </html>
