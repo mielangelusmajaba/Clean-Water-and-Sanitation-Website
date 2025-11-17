@@ -144,6 +144,10 @@ h3, h4, h5, h6 {
 }
 
 /* Mobile Toggle - Hidden by Default */
+.nav-toggle-checkbox {
+    display: none;
+}
+
 .nav-toggle {
     display: none;
     background: none;
@@ -542,6 +546,13 @@ h3, h4, h5, h6 {
     .nav-menu a {
         display: block;
         padding: var(--space-sm);
+    }
+
+    /* Show menu when checkbox is checked */
+    .nav-toggle-checkbox:checked ~ .nav-menu {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: all;
     }
 
     /* Hero content centers and reprioritizes */
