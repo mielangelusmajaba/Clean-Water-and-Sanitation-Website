@@ -126,6 +126,26 @@ h3, h4, h5, h6 {
     color: var(--color-navy-blue);
 }
 
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+.logo-img {
+    height: clamp(56px, 8vh, 72px);
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+    display: block;
+}
+
 .nav-menu {
     display: flex;
     list-style: none;
@@ -762,6 +782,125 @@ h3, h4, h5, h6 {
     
     .desktop-only {
         display: none;
+    }
+}
+
+/* Accordion Styles */
+.accordion {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.accordion-item {
+    border: 1px solid rgba(34, 87, 122, 0.15);
+    border-radius: 6px;
+    overflow: hidden;
+    background: var(--color-white);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: box-shadow 0.3s ease;
+}
+
+.accordion-item:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.accordion-header {
+    width: 100%;
+    padding: var(--space-md) var(--space-lg);
+    background: var(--color-white);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--space-md);
+    transition: background-color 0.3s ease;
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: var(--font-size-body);
+    color: var(--color-navy-blue);
+    text-align: left;
+}
+
+.accordion-header:hover {
+    background-color: rgba(25, 175, 137, 0.05);
+}
+
+.accordion-header[aria-expanded="true"] {
+    background-color: rgba(25, 175, 137, 0.08);
+}
+
+.accordion-title {
+    flex: 1;
+}
+
+.accordion-icon {
+    width: clamp(20px, 2vw, 24px);
+    height: auto;
+    flex-shrink: 0;
+    transition: transform 0.4s ease;
+    object-fit: contain;
+}
+
+.accordion-header[aria-expanded="true"] .accordion-icon {
+    transform: rotate(180deg);
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.4s ease;
+    background: rgba(25, 175, 137, 0.02);
+    border-top: 1px solid rgba(34, 87, 122, 0.08);
+}
+
+.accordion-content[aria-hidden="false"] {
+    padding: 0 var(--space-lg) var(--space-lg);
+    max-height: none;
+}
+
+.accordion-content p {
+    font-size: var(--font-size-body);
+    line-height: 1.7;
+    color: var(--color-medium-gray);
+    margin: 0;
+}
+
+/* Responsive Accordion */
+@media (max-width: 768px) {
+    .accordion {
+        gap: var(--space-xs);
+    }
+
+    .accordion-header {
+        padding: var(--space-md) var(--space-md);
+        font-size: clamp(14px, 1.1vw, 16px);
+    }
+
+    .accordion-icon {
+        width: 20px;
+    }
+
+    .accordion-content[aria-hidden="false"] {
+        padding: 0 var(--space-md) var(--space-md);
+    }
+}
+
+@media (max-width: 480px) {
+    .accordion-header {
+        padding: var(--space-sm) var(--space-md);
+        gap: var(--space-sm);
+    }
+
+    .accordion-content[aria-hidden="false"] {
+        padding: 0 var(--space-md) var(--space-md);
+    }
+
+    .accordion-content p {
+        font-size: var(--font-size-base);
     }
 }
 
