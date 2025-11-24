@@ -23,17 +23,17 @@
                     <span></span>
                 </label>
                 <ul class="nav-menu" role="list">
-                    <li><a href="#" class="active" aria-current="page">Home</a></li>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#gallery">Gallery</a></li>
-                    <li><a href="#contact">Contact Us</a></li>
+                    <li><a href="#home" class="nav-link active" data-section="home" aria-current="page">Home</a></li>
+                    <li><a href="#about" class="nav-link" data-section="about">About Us</a></li>
+                    <li><a href="#gallery" class="nav-link" data-section="gallery">Gallery</a></li>
+                    <li><a href="#contact" class="nav-link" data-section="contact">Contact Us</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="hero" role="banner" aria-labelledby="hero-heading">
+    <section id="home" class="hero" role="banner" aria-labelledby="hero-heading">
         <div class="hero-overlay">
             <div class="container">
                 <div class="hero-content">
@@ -206,6 +206,52 @@
             window.scrollTo({
                 top: 0,
                 behavior: 'smooth'
+            });
+        });
+
+        // Navigation Active Link Detection
+        const navLinks = document.querySelectorAll('.nav-link');
+        const sections = document.querySelectorAll('section[id], header');
+
+        function updateActiveLink() {
+            let currentSection = 'home';
+
+            // Check which section is most visible in viewport
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                
+                // Check if section is in viewport with some threshold
+                if (window.scrollY >= sectionTop - 200 && window.scrollY < sectionTop + sectionHeight - 200) {
+                    if (section.id) {
+                        currentSection = section.id;
+                    }
+                }
+            });
+
+            // Update active class on all nav links
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                link.removeAttribute('aria-current');
+
+                if (link.getAttribute('data-section') === currentSection) {
+                    link.classList.add('active');
+                    link.setAttribute('aria-current', 'page');
+                }
+            });
+        }
+
+        // Listen to scroll events
+        window.addEventListener('scroll', updateActiveLink, { passive: true });
+
+        // Call once on page load
+        updateActiveLink();
+
+        // Update on link click
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                navLinks.forEach(l => l.classList.remove('active'));
+                link.classList.add('active');
             });
         });
     </script>

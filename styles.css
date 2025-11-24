@@ -140,11 +140,32 @@ h3, h4, h5, h6 {
     font-size: clamp(14px, 1.2vw, 16px);
     transition: color 0.3s ease;
     white-space: nowrap;
+    position: relative;
+    padding-bottom: 4px;
 }
 
-.nav-menu a:hover,
+.nav-menu a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background-color: var(--color-secondary);
+    transition: width 0.4s ease;
+    border-radius: 2px;
+}
+
+.nav-menu a:hover::after {
+    width: 100%;
+}
+
 .nav-menu a.active {
-    color: var(--color-teal);
+    color: var(--color-secondary);
+}
+
+.nav-menu a.active::after {
+    width: 100%;
 }
 
 /* Mobile Toggle - Hidden by Default */
