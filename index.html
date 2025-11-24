@@ -27,6 +27,7 @@
                     <li><a href="#home" class="nav-link active" data-section="home" aria-current="page">Home</a></li>
                     <li><a href="#about" class="nav-link" data-section="about">About Us</a></li>
                     <li><a href="#gallery" class="nav-link" data-section="gallery">Gallery</a></li>
+                    <li><a href="#faq" class="nav-link" data-section="faq">FAQ</a></li>
                     <li><a href="#contact" class="nav-link" data-section="contact">Contact Us</a></li>
                 </ul>
             </nav>
@@ -141,7 +142,7 @@
                     </button>
                     <div id="faq-1" class="accordion-content" hidden>
                         <p>SDG 6's full title is "Ensure availability and sustainable management of water and sanitation for all," covering drinking water, sanitation, hygiene, wastewater, water-use efficiency, ecosystem protection, and cooperation. It has eight targets and related indicators that track progress on access, quality, efficiency, governance, and international support.</p>
-                        <p><a class="faq-links"href="https://sdgs.un.org/goals/goal6" >SDG 6</a></p>
+                        <p><a class="faq-links" target="_blank" href="https://sdgs.un.org/goals/goal6" >SDG 6</a></p>
                     </div>
                 </div>
 
@@ -324,6 +325,7 @@
         const homeSection = document.getElementById('home');
         const aboutSection = document.getElementById('about');
         const gallerySection = document.getElementById('gallery');
+        const faqSection = document.getElementById('faq');
         const contactSection = document.getElementById('contact');
 
         function updateActiveLink() {
@@ -334,6 +336,7 @@
             const homeTop = homeSection.offsetTop;
             const aboutTop = aboutSection.offsetTop;
             const galleryTop = gallerySection.offsetTop;
+            const faqTop = faqSection.offsetTop;
             const contactTop = contactSection.offsetTop;
 
             // Determine active section based on scroll position
@@ -342,8 +345,10 @@
             } else if (scrollPos < galleryTop - 200) {
                 // Everything from About to just before Gallery stays on "About Us"
                 currentSection = 'about';
-            } else if (scrollPos < contactTop - 200) {
+            } else if (scrollPos < faqTop - 200) {
                 currentSection = 'gallery';
+            } else if (scrollPos < contactTop - 200) {
+                currentSection = 'faq';
             } else {
                 currentSection = 'contact';
             }

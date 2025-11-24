@@ -527,6 +527,10 @@ h3, h4, h5, h6 {
     /* Principle 2: Content reprioritizes based on space */
 }
 
+.faq-links {
+    color: var(--color-secondary);
+}
+
 .contact-info,
 .contact-form {
     width: 100%;
