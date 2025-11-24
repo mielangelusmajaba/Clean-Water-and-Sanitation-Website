@@ -211,23 +211,32 @@
 
         // Navigation Active Link Detection
         const navLinks = document.querySelectorAll('.nav-link');
-        const sections = document.querySelectorAll('section[id], header');
+        const homeSection = document.getElementById('home');
+        const aboutSection = document.getElementById('about');
+        const gallerySection = document.getElementById('gallery');
+        const contactSection = document.getElementById('contact');
 
         function updateActiveLink() {
             let currentSection = 'home';
+            const scrollPos = window.scrollY;
 
-            // Check which section is most visible in viewport
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                
-                // Check if section is in viewport with some threshold
-                if (window.scrollY >= sectionTop - 200 && window.scrollY < sectionTop + sectionHeight - 200) {
-                    if (section.id) {
-                        currentSection = section.id;
-                    }
-                }
-            });
+            // Define section boundaries
+            const homeTop = homeSection.offsetTop;
+            const aboutTop = aboutSection.offsetTop;
+            const galleryTop = gallerySection.offsetTop;
+            const contactTop = contactSection.offsetTop;
+
+            // Determine active section based on scroll position
+            if (scrollPos < aboutTop - 200) {
+                currentSection = 'home';
+            } else if (scrollPos < galleryTop - 200) {
+                // Everything from About to just before Gallery stays on "About Us"
+                currentSection = 'about';
+            } else if (scrollPos < contactTop - 200) {
+                currentSection = 'gallery';
+            } else {
+                currentSection = 'contact';
+            }
 
             // Update active class on all nav links
             navLinks.forEach(link => {
