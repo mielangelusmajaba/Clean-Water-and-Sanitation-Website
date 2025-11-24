@@ -154,6 +154,9 @@
         </div>
     </section>
 
+    <!-- Back to Top Button -->
+    <a href="#" class="btn btn-primary back-to-top" aria-label="Back to top">Back to Top</a>
+
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
@@ -185,5 +188,26 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        // Back to Top Button Functionality
+        const backToTopButton = document.querySelector('.back-to-top');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopButton.classList.add('show');
+            } else {
+                backToTopButton.classList.remove('show');
+            }
+        });
+
+        backToTopButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
 </body>
 </html>
