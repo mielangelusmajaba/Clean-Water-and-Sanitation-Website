@@ -536,11 +536,24 @@ h3, h4, h5, h6 {
     width: 100%;
 }
 
+.contact-info h3 {
+    color: var(--color-white);
+}
+
+.contact-info p {
+    color: var(--color-white);
+}
+
 .contact-details {
     margin-top: var(--space-lg);
     display: flex;
     flex-direction: column;
     gap: var(--space-sm);
+    color: var(--color-white);
+}
+
+.contact-details a {
+    color: var(--color-white);
 }
 
 .contact-form form {
@@ -572,8 +585,8 @@ h3, h4, h5, h6 {
 
 /* Footer - Flexible Box System */
 .footer {
-    background-color: var(--color-primary-dark);
-    color: var(--color-white);
+    background-color: var(--color-white);
+    color: var(--color-medium-gray);
     padding: var(--space-xl) 0 var(--space-md);
 }
 
@@ -590,7 +603,7 @@ h3, h4, h5, h6 {
 }
 
 .footer-section h4 {
-    color: var(--color-white);
+    color: var(--color-navy-blue);
     margin-bottom: var(--space-md);
     font-size: var(--font-size-h3);
 }
@@ -607,7 +620,7 @@ h3, h4, h5, h6 {
 }
 
 .footer-section a {
-    color: var(--color-white);
+    color: var(--color-navy-blue);
     text-decoration: none;
     opacity: 0.8;
     transition: opacity 0.3s ease;
@@ -620,8 +633,9 @@ h3, h4, h5, h6 {
 .footer-bottom {
     text-align: center;
     padding-top: var(--space-lg);
-    border-top: 1px solid rgba(255,255,255,0.1);
+    border-top: 1px solid rgba(0,0,0,0.1);
     font-size: clamp(12px, 1.2vw, 14px);
+    color: var(--color-medium-gray);
 }
 
 /* Responsive Design - Purposeful Rearrangement */
